@@ -20,4 +20,22 @@ Garments which may fit one person may not necessarily be equally suitable for so
 
 Different people will need different styles and designs, something which will be an expression of their uniqueness and personality.
 Whoever said “clothes make a man” had the right idea about how people perceive each other from the first look.
-Whether you like it or not, a big part of the first impression that we make when you meet someone depends on how you look – which is basically how you’re dressed.
+Whether you like it or not, a big part of the first impression that we make when you meet someone depends on how you look – which is basically how you’re dressed.  
+
+### Team Members and Responsibilities:  
+
+Software Developer\ Software Architect: Ali Ibrahim
+-	Responsible for technical architecture
+-	Responsible for full stack development
+-	Responsible for penetration testing 
+
+Project Manager\ Software Developer: Rania Ibrahim
+-	Responsible for setup and maintenance of server environment. 
+-	Responsible for penetration testing 
+-	Responsible for full stack development
+
+Security Analyst\ Software Developer: Nathaniel Carter
+-	Responsible for analyzing and implementing security measures
+-	Responsible for monitoring network for security issues
+-	Responsible for penetration testing
+
