@@ -1,0 +1,7 @@
+<div *ngIf="(isAuthenticated | async) && isUserValid === true && isProfileSetup === true;">
+    <div class="loading-indicator" *ngIf="loading else loaded">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <p-toast key="validation" position="top-right"></p-toast>
+    orders
+</div>    

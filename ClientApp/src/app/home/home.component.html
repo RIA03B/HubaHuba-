@@ -1,0 +1,345 @@
+<div *ngIf="!(isAuthenticated | async) && isUserValid === false;">
+  <div class="loading-indicator" *ngIf="loading else loaded">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <p-toast key="myKey1" position="top-right"></p-toast>
+  <!-- Header -->
+  <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+    <img class="w3-image" src="../../assets/Images/Main.png" alt="HBHB" width="1600" height="800">
+  </header>
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:1100px">
+
+    <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+
+      <div class="w3-col l6 w3-padding-large">
+        <br>
+        <img src="../../assets/Images/AboutUs.jpg" class="w3-round w3-image w3-opacity-min" alt="AboutUs"
+          style="width:100%">
+      </div>
+
+      <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center">About Us</h1><br>
+        <p class="w3-large">We are passionate about helping you grow. Fashion is constantly evolving; it can be hard to
+          keep up. We know what it’s like to feel overwhelmed or discouraged as you try to find the right style for you
+          with today's hectic lifestyle, which is why we want to be there for you to make the process easier. Style has
+          become one of the primary ways in which people express their personality and in which they distinguish
+          themselves from those around them.
+        </p>
+        <br>
+        <p class="w3-large">
+          Garments which may fit one person may not necessarily be equally suitable for someone else. Different people
+          will need different styles and designs, something which will be an expression of their uniqueness and
+          personality. Whoever said “clothes make a man” had the right idea about how people perceive each other on the
+          first look. Whether you like it or not, a big part of the first impression that we make when you meet someone
+          depends on how you look – which is basically how you’re dressed.
+        </p>
+        <br>
+        <p class="w3-large">
+          The idea of a personal stylist becomes much more accessible with us. We are the Golden Ramsey of fashion. We
+          tell you what works for you and how to make it work for you because people are different, and we do things
+          differently for everyone to make them feel and look good. We put effort in for you, so forget about the
+          questions that come to your mind: what do I wear?, I don't have anything to wear, and I don't have time.
+        </p>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+      <div class="w3-col l6 w3-padding-large">
+        <h1 class="w3-center">Our Offers</h1><br>
+        <h4>Garments you already own</h4>
+        <p class="w3-text-grey">- Make fashionable new looks from items you already have.</p><br>
+
+        <h4>New Wardrobe</h4>
+        <p class="w3-text-grey">- New items that will make you feel and look good.</p><br>
+
+        <h4>Need Advice</h4>
+        <p class="w3-text-grey">- Need advice on hair/ makeup/ accessories/ shoes/ and more we got &nbsp;&nbsp; you!</p>
+        <br>
+
+        <h4>Special Event</h4>
+        <p class="w3-text-grey">- Let's get you ready for your special occasion!</p><br>
+      </div>
+      <div class="w3-col l6 w3-padding-large">
+        <img src="../../assets/Images/Offers.jpg" class="w3-round w3-image w3-opacity-min" alt="Offers"
+          style="width:100%">
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-64" id="contact">
+      <h1>Contact</h1><br>
+      <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the
+        food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+      <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
+      <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message
+        here:</p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+        <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+            value="2020-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required
+            name="Message"></p>
+        <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+
+    <!-- End page content -->
+  </div>
+</div>
+
+<div *ngIf="(isAuthenticated | async) && isUserValid === true; ">
+  <div class="loading-indicator" *ngIf="loading else loaded">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <p-toast key="myKey1" position="top-right"></p-toast>
+  <div *ngIf="isProfileSetup === true;">
+    <div class="grid">
+      <div class="grid__item">
+        <div class="card"><img class="card__img" src="../../assets/Images/Garments you own.jpg" alt="Garments You Own">
+          <div class="card__content">
+            <h1 class="card__header">Garments you already own</h1>
+            <p class="card__text">Make fashionable new looks from items you already have.</p>
+          </div>
+          <button class="card__btn" (click)="ExploreGarments()">Explore <span>&rarr;</span></button>
+        </div>
+      </div>
+      <div class="grid__item">
+        <div class="card"><img class="card__img" src="../../assets/Images/New Wardrobe.jpg" alt="New Wardrobe">
+          <div class="card__content">
+            <h1 class="card__header">New Wardrobe</h1>
+            <p class="card__text">New items that will make you feel and look good.</p>
+          </div>
+          <button class="card__btn" (click)="ExploreWardrobe()">Explore <span>&rarr;</span></button>
+        </div>
+      </div>
+      <div class="grid__item">
+        <div class="card"><img class="card__img" src="../../assets/Images/Advise.jpg" alt="Advise">
+          <div class="card__content">
+            <h1 class="card__header">Need Advice</h1>
+            <p class="card__text" style="margin-bottom: 20px !important;">Need advice on hair/ makeup/ accessories/
+              shoes/ and more we got you!</p>
+          </div>
+          <button class="card__btn" (click)="ExploreAdvise()">Explore <span>&rarr;</span></button>
+        </div>
+      </div>
+      <div class="grid__item">
+        <div class="card"><img class="card__img" src="../../assets/Images/SpecialEvent.jpg" alt="Special Event">
+          <div class="card__content">
+            <h1 class="card__header">Special Event &nbsp;</h1>
+            <p class="card__text">Let's get you ready for your special occasion!</p>
+          </div>
+          <button class="card__btn" (click)="ExploreEvents()">Explore <span>&rarr;</span></button>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div *ngIf="isProfileSetup === false;">
+
+    <div class="loading-indicator" *ngIf="loading else loaded">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <p-toast key="validation" position="top-right"></p-toast>
+
+    <h3 style="text-align: center;">Profile Setup</h3>
+    <br>
+    <h5 style="text-align: center;">Before you choose one of our services we would like to get to know you better <ngx-emoji [emoji]="{ id: 'smiley', skin: 1 }" size="32"></ngx-emoji></h5> 
+    <hr>
+    <p-accordion>
+      <p-accordionTab header="Personal Information" [selected]="true">
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-4">
+            <label for="firstname" >FirstName</label>
+            <input style="padding: 0.5rem 0.5rem;" id="firstname" type="text" [(ngModel)]="FirstName" required  pInputText >
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="lastname">LastName</label>
+            <input style="padding: 0.5rem 0.5rem;" id="lastname" type="text" required [(ngModel)]="LastName" pInputText>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="phonenumber">PhoneNumber</label>
+            <p-inputMask mask="(999) 999-9999" style="height: 42px;" id="phonenumber" [(ngModel)]="PhoneNumber"
+              placeholder="(999) 999-9999"></p-inputMask>
+          </div>
+        </div>
+      </p-accordionTab>
+
+    </p-accordion>
+    <br>
+    <p-accordion>
+      <p-accordionTab header="Body Characteristics" [selected]="true">
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-4">
+            <label for="haircolor">Hair Color</label>
+            <p-dropdown [options]="haircolors" id="haircolor" [(ngModel)]="selectedHairColor" optionLabel="name" [filter]="true"
+              filterBy="name" [showClear]="true" placeholder="Select a Hair Color">
+              <ng-template pTemplate="selectedItem">
+                <div class="haircolor-item haircolor-item-value" *ngIf="selectedHairColor">
+                  <img src="{{selectedHairColor.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{selectedHairColor.name}}
+                </div>
+              </ng-template>
+              <ng-template let-haircolor pTemplate="item">
+                <div class="haircolor-item">
+                  <img src="{{haircolor.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{haircolor.name}}
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="skincolor">Skin Color</label>
+            <p-dropdown [options]="skincolors" id="skincolor" [(ngModel)]="selectedSkinColor" optionLabel="name" [filter]="true"
+              filterBy="name" [showClear]="true" placeholder="Select a Skin Color">
+              <ng-template pTemplate="selectedItem">
+                <div class="skincolor-item haircolor-item-value" *ngIf="selectedSkinColor">
+                  <img src="{{selectedSkinColor.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{selectedSkinColor.name}}
+                </div>
+              </ng-template>
+              <ng-template let-skincolor pTemplate="item">
+                <div class="skincolor-item">
+                  <img src="{{skincolor.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{skincolor.name}}
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="eyecolor">Eye Color</label>
+            <p-dropdown [options]="eyecolors" id="eyecolor" [(ngModel)]="selectedEyeColor" optionLabel="name" [filter]="true"
+              filterBy="name" [showClear]="true" placeholder="Select a Eye Color">
+              <ng-template pTemplate="selectedItem">
+                <div class="eyecolor-item eyecolor-item-value" *ngIf="selectedEyeColor">
+                  <img src="{{selectedEyeColor.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{selectedEyeColor.name}}
+                </div>
+              </ng-template>
+              <ng-template let-eyecolor pTemplate="item">
+                <div class="eyecolor-item">
+                  <img src="{{eyecolor.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{eyecolor.name}}
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+        <!--Line 2 of Options-->
+        <br>
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-4">
+            <label for="faceshape">Face Shape</label>
+            <p-dropdown [options]="faceshapes" id="faceshape" [(ngModel)]="selectedFaceShape" optionLabel="name" [filter]="true"
+              filterBy="name" [showClear]="true" placeholder="Select a Face Shape">
+              <ng-template pTemplate="selectedItem">
+                <div class="faceshape-item faceshape-item-value" *ngIf="selectedHairColor">
+                  <img src="{{selectedFaceShape.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{selectedFaceShape.name}}
+                </div>
+              </ng-template>
+              <ng-template let-faceshape pTemplate="item">
+                <div class="faceshape-item">
+                  <img src="{{faceshape.src}}" [class]="'color'"
+                    style="width: 30px; margin-right: .5rem;" />{{faceshape.name}}
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="Height">Height</label>
+            <p-inputNumber [(ngModel)]="Height" inputId="Height" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="2" suffix=" FT">
+            </p-inputNumber>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="Weight">Weight</label>
+            <p-inputNumber [(ngModel)]="Weight" inputId="Weight" suffix=" LB">
+            </p-inputNumber>
+          </div>
+
+
+        </div>
+
+      </p-accordionTab>
+    </p-accordion>
+    <br>
+    <p-accordion>
+      <p-accordionTab header="Personality Characteristics" [selected]="true">
+
+        <div class="p-fluid p-formgrid p-grid">
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="insecurities">Insecurities</label>
+            <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="insecurities" cols="30" [(ngModel)]="Insecurities" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="securities">Securities</label>
+            <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="securities" cols="30" [(ngModel)]="Securities" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="favourite">Favourite TV-Shows or Movies</label>
+            <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="favourite" cols="30" [(ngModel)]="FavouriteTvMovie" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+
+        </div>
+        <br>
+        <div class="p-fluid p-formgrid p-grid">
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="jobdesc">Job Description</label>
+            <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="jobdesc" cols="30" [(ngModel)]="JobDesc" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="accomplishedfeeling">Accomplished Feeling</label>
+            <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="accomplishedfeeling" cols="30" [(ngModel)]="AcomplishedFeeling" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+
+          <div class="p-field p-col-12 p-md-4">
+            <label for="vibewanted">Vibe Wanted</label>
+            <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="vibewanted" cols="30" [(ngModel)]="VibeWanted" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+
+        </div>
+
+      </p-accordionTab>
+    </p-accordion>
+
+    <br>
+    <p-accordion>
+      <p-accordionTab header="Photo" [selected]="true">
+        <h5 style="text-align: center;">Profile Photo</h5><br>
+        <p-messages [(value)]="fileMessage"></p-messages>
+        <input #file class="foo" id="file" name="file" type="file" accept="image/*"  (change)="fileChange($event.target.files)" />
+        <br>
+        <h5 style="text-align: center;">{{filePhotoName}}</h5>
+      </p-accordionTab>
+    </p-accordion>
+    <br><br>
+    <button style="width: 100%; height: 40px;" pButton pRipple type="button" label="Submit" class="p-button-rounded" (click)="SubmitClick(file.files)"></button>
+
+    <br><br><br><br><br><br><br>
+  </div>
+</div>

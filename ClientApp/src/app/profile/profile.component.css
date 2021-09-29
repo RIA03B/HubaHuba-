@@ -1,0 +1,111 @@
+.foo {
+    display: block;
+    position: relative;
+    width: 300px;
+    margin: auto;
+    cursor: pointer;
+    border: 0;
+    height: 60px;
+    border-radius: 5px;
+    outline: 0;
+  }
+  .foo:hover:after {
+    background: linear-gradient(45deg, #c33764 , #1d2671);
+  }
+  .foo:after {
+    transition: 200ms all ease;
+    border-bottom: 3px solid rgba(0,0,0,.2);
+    background: linear-gradient(45deg, #c33764 , #1d2671);
+    text-shadow: 0 2px 0 rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: 'Upload Photo';
+    line-height: 60px;
+    border-radius: 5px;
+  }
+  
+  
+  :host ::ng-deep .p-message-custom {
+    background: linear-gradient(45deg, #c33764 , #1d2671);
+    border: solid #8A427A;
+    border-width: 0 0 0 6px;
+    color: white;
+  }
+  
+  :host ::ng-deep .p-message-close-icon {
+    color: white;
+  }
+  
+  :host ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+    background: linear-gradient(45deg, #c33764 , #1d2671);
+    color: white;
+  }
+  
+  
+  .loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 4em;
+    width: 4em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .loading-indicator:before{
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @keyframes p-prorgess-spinner-color {
+    100%,
+    0% {
+        stroke: #d62d20;
+    }
+    40% {
+        stroke: #0057e7;
+    }
+    66% {
+        stroke: #008744;
+    }
+    80%,
+    90% {
+        stroke: #ffa700;
+    }
+  }
+
+
+  /* img {
+    text-align: center;
+    width: 25%;
+    height: 25%;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+
+  } */
+
+  .circular_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: blue;
+    display:inline-block;
+    vertical-align:middle;
+  }

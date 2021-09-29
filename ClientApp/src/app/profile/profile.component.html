@@ -1,0 +1,215 @@
+<div *ngIf="(isAuthenticated | async) && isUserValid === true && isProfileSetup === true;">
+  <div class="loading-indicator" *ngIf="loading else loaded">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+
+  <p-toast key="myKey1" position="top-right"></p-toast>
+  <p-toast key="validation" position="top-right"></p-toast>
+
+  <h3 style="text-align: center;">Your Profile</h3>
+  <br>
+    <div style="text-align: center;">
+        <img src={{CPhoto}} alt="profile pic" class="circular_image">
+    </div>
+  <br>
+  <h5 style="text-align: center;">Keep your info up to date so we can serve you to the best of our abilities <ngx-emoji
+      [emoji]="{ id: 'smiley', skin: 1 }" size="32"></ngx-emoji>
+  </h5>
+
+  <p-accordion>
+    <p-accordionTab header="Personal Information" [selected]="true">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4">
+          <label for="firstname">FirstName</label>
+          <input style="padding: 0.5rem 0.5rem;" id="firstname" type="text" [(ngModel)]="FirstName" required pInputText>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="lastname">LastName</label>
+          <input style="padding: 0.5rem 0.5rem;" id="lastname" type="text" required [(ngModel)]="LastName" pInputText>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="phonenumber">PhoneNumber</label>
+          <p-inputMask mask="(999) 999-9999" style="height: 42px;" id="phonenumber" [(ngModel)]="PhoneNumber"
+            placeholder="(999) 999-9999"></p-inputMask>
+        </div>
+      </div>
+    </p-accordionTab>
+
+  </p-accordion>
+  <br>
+  <p-accordion>
+    <p-accordionTab header="Body Characteristics" [selected]="true">
+
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4">
+          <label for="haircolor">Hair Color</label>
+          <p-dropdown [options]="haircolors" id="haircolor" [(ngModel)]="selectedHairColor" optionLabel="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Hair Color">
+            <ng-template pTemplate="selectedItem">
+              <div class="haircolor-item haircolor-item-value" *ngIf="selectedHairColor">
+                <img src="{{selectedHairColor.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{selectedHairColor.name}}
+              </div>
+            </ng-template>
+            <ng-template let-haircolor pTemplate="item">
+              <div class="haircolor-item">
+                <img src="{{haircolor.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{haircolor.name}}
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="skincolor">Skin Color</label>
+          <p-dropdown [options]="skincolors" id="skincolor" [(ngModel)]="selectedSkinColor" optionLabel="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Skin Color">
+            <ng-template pTemplate="selectedItem">
+              <div class="skincolor-item haircolor-item-value" *ngIf="selectedSkinColor">
+                <img src="{{selectedSkinColor.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{selectedSkinColor.name}}
+              </div>
+            </ng-template>
+            <ng-template let-skincolor pTemplate="item">
+              <div class="skincolor-item">
+                <img src="{{skincolor.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{skincolor.name}}
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="eyecolor">Eye Color</label>
+          <p-dropdown [options]="eyecolors" id="eyecolor" [(ngModel)]="selectedEyeColor" optionLabel="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Eye Color">
+            <ng-template pTemplate="selectedItem">
+              <div class="eyecolor-item eyecolor-item-value" *ngIf="selectedEyeColor">
+                <img src="{{selectedEyeColor.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{selectedEyeColor.name}}
+              </div>
+            </ng-template>
+            <ng-template let-eyecolor pTemplate="item">
+              <div class="eyecolor-item">
+                <img src="{{eyecolor.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{eyecolor.name}}
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+      <!--Line 2 of Options-->
+      <br>
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4">
+          <label for="faceshape">Face Shape</label>
+          <p-dropdown [options]="faceshapes" id="faceshape" [(ngModel)]="selectedFaceShape" optionLabel="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Face Shape">
+            <ng-template pTemplate="selectedItem">
+              <div class="faceshape-item faceshape-item-value" *ngIf="selectedHairColor">
+                <img src="{{selectedFaceShape.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{selectedFaceShape.name}}
+              </div>
+            </ng-template>
+            <ng-template let-faceshape pTemplate="item">
+              <div class="faceshape-item">
+                <img src="{{faceshape.src}}" [class]="'color'"
+                  style="width: 30px; margin-right: .5rem;" />{{faceshape.name}}
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="Height">Height</label>
+          <p-inputNumber [(ngModel)]="Height" inputId="Height" mode="decimal" [minFractionDigits]="2"
+            [maxFractionDigits]="2" suffix=" FT">
+          </p-inputNumber>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="Weight">Weight</label>
+          <p-inputNumber [(ngModel)]="Weight" inputId="Weight" suffix=" LB">
+          </p-inputNumber>
+        </div>
+
+
+      </div>
+
+    </p-accordionTab>
+  </p-accordion>
+  <br>
+  <p-accordion>
+    <p-accordionTab header="Personality Characteristics" [selected]="true">
+
+      <div class="p-fluid p-formgrid p-grid">
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="insecurities">Insecurities</label>
+          <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="insecurities" cols="30" [(ngModel)]="Insecurities"
+            pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="securities">Securities</label>
+          <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="securities" cols="30" [(ngModel)]="Securities"
+            pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="favourite">Favourite TV-Shows or Movies</label>
+          <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="favourite" cols="30" [(ngModel)]="FavouriteTvMovie"
+            pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+
+      </div>
+      <br>
+      <div class="p-fluid p-formgrid p-grid">
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="jobdesc">Job Description</label>
+          <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="jobdesc" cols="30" [(ngModel)]="JobDesc" pInputTextarea
+            autoResize="autoResize"></textarea>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="accomplishedfeeling">Accomplished Feeling</label>
+          <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="accomplishedfeeling" cols="30"
+            [(ngModel)]="AcomplishedFeeling" pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+          <label for="vibewanted">Vibe Wanted</label>
+          <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="vibewanted" cols="30" [(ngModel)]="VibeWanted"
+            pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+
+      </div>
+
+    </p-accordionTab>
+  </p-accordion>
+
+
+  <br><br>
+  <p-accordion>
+    <p-accordionTab header="Photo" [selected]="true">
+      <h5 style="text-align: center;">Upload a new profile photo</h5><br>
+      <br>
+      <p-messages [(value)]="fileMessage"></p-messages>
+      <input #file class="foo" id="file" name="file" type="file" accept="image/*"
+        (change)="fileChange($event.target.files)" />
+      <br>
+      <h5 style="text-align: center;">{{filePhotoName}}</h5>
+    </p-accordionTab>
+  </p-accordion>
+
+  <br><br>
+  <button style="width: 100%; height: 40px;" pButton pRipple type="button" label="Update" class="p-button-rounded"
+    (click)="SaveData(file.files)"></button>
+
+
+  <br><br><br><br><br><br><br>
+
+</div>
