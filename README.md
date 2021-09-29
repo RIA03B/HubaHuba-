@@ -22,7 +22,7 @@ Different people will need different styles and designs, something which will be
 Whoever said “clothes make a man” had the right idea about how people perceive each other from the first look.
 Whether you like it or not, a big part of the first impression that we make when you meet someone depends on how you look – which is basically how you’re dressed.  
 
-### Team Members and Responsibilities:  
+## Team Members and Responsibilities:  
 
 Software Developer\ Software Architect: Ali Ibrahim
 -	Responsible for technical architecture
@@ -38,4 +38,6 @@ Security Analyst\ Software Developer: Nathaniel Carter
 -	Responsible for analyzing and implementing security measures
 -	Responsible for monitoring network for security issues
 -	Responsible for penetration testing
-
+## Used Technologies:  
+- We will use SQL for our database. 
+- As well as C#, Angular, HTML, CSS, and Typescript for our front and backend development. 
