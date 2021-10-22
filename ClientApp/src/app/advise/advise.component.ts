@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthorizeService } from 'src/api-authorization/authorize.service';
 import { UserInfoService } from '../services/user-info.service';
+interface Topics {
+  index: number,
+  name: string
+}
 @Component({
   selector: 'app-advise',
   templateUrl: './advise.component.html',
@@ -22,6 +26,7 @@ export class AdviseComponent implements OnInit {
   customMessage : Message[];
   ValidationMessage : Message[];
   loading : any; loaded : any;
+  topics: Topics[]; selectedTopic : Topics;
   public progress: number; public message: string; isImageLoading : boolean; 
   constructor(@Inject('BASE_URL') baseUrl: string , private authorizeService: AuthorizeService , private dataService : UserInfoService , private http : HttpClient , private messageService : MessageService , private router : Router) { 
     this.baseURL = baseUrl;
@@ -46,6 +51,13 @@ export class AdviseComponent implements OnInit {
     }, 1000)
 
     this.loading = false;
+
+    this.topics = [
+      {index: 1, name: 'Hair'},
+      {index: 2, name: 'Make Up'},
+      {index: 3, name: 'Accessories'},
+      {index: 4, name: 'Shoes'}
+  ];
   }
 
   clearMessages(name) {

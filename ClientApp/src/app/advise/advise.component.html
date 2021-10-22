@@ -3,5 +3,29 @@
       <p-progressSpinner></p-progressSpinner>
     </div>
     <p-toast key="validation" position="top-right"></p-toast>
-    advise
-</div>    
+
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <h5>Topics*</h5>
+        <p-dropdown [options]="topics" [style]="{'width':'300px'}" [(ngModel)]="selectedTopic" placeholder="Select a Topic" optionLabel="name" [showClear]="true"></p-dropdown>
+      </div>
+    </div>
+    <br><br>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <label for="matAvoid">Questions*</label>
+        <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="matAvoid" cols="30" [(ngModel)]="MaterialAvoid"
+          pInputTextarea autoResize="autoResize"></textarea>
+      </div>
+    </div>
+
+    <br>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <button type="button" pButton icon="pi pi-check" class="ui-button-danger" (click)="SubmitOrder()"
+          label="Pay & Submit"></button>
+      </div>
+    </div> 
+
+    
+</div>      

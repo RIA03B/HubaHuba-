@@ -28,7 +28,7 @@ export class GarmentsComponent implements OnInit {
   loading : any; loaded : any;
   imagePath : any; URLS = new Array(); FilesStorage : ImageFile[]; TestFile : ImageFile;
   deletedialog : boolean = false;  GMTHeaders : any[]; GMTData = new Array(); selectedGMT : any;
-  public progress: number; public message: string; isImageLoading : boolean;  NStyles : any;
+  public progress: number; public message: string; isImageLoading : boolean;  NStyles : any; payNow : boolean = false;
   constructor(@Inject('BASE_URL') baseUrl: string , private authorizeService: AuthorizeService , private dataService : UserInfoService , private http : HttpClient , private messageService : MessageService , private router : Router) { 
     this.baseURL = baseUrl;
   }
@@ -125,5 +125,6 @@ export class GarmentsComponent implements OnInit {
       setTimeout(()=>this.messageService.clear("validation"),20000);
       return;
     }
+    this.payNow = true;
   }
 }

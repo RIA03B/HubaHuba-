@@ -3,5 +3,37 @@
       <p-progressSpinner></p-progressSpinner>
     </div>
     <p-toast key="validation" position="top-right"></p-toast>
-    wardrobe
+
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <label for="matAvoid">Material to Avoid</label>
+        <textarea style="padding: 0.5rem 0.5rem;" rows="5" id="matAvoid" cols="30" [(ngModel)]="MaterialAvoid"
+          pInputTextarea autoResize="autoResize"></textarea>
+      </div>
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <label> Budget* </label> <br>
+        <p-inputNumber id="BudgetInput"  [(ngModel)]="CBudget" name="CBudget" mode="currency" currency="USD" locale="en-US">
+        </p-inputNumber>
+      </div>
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <label for="Outfits">Number of outfits*</label>
+        <p-inputNumber [(ngModel)]="NOutfits" inputId="Outfits">
+        </p-inputNumber>
+      </div>
+    </div>
+
+    <br>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-12">
+      <button type="button" pButton icon="pi pi-check" class="ui-button-danger" (click)="SubmitOrder()"
+        label="Pay & Submit"></button>
+    </div>
+  </div> 
+
 </div>    
