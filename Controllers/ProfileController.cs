@@ -13,7 +13,7 @@ namespace HBHB.Controllers
 {
     [Authorize]
     [ApiController]
-    public class AdviseController : ControllerBase
+    public class ProfileController : ControllerBase
     {
 
         [HttpGet]
