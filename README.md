@@ -21,22 +21,7 @@ There will also be a message displayed for the user, which will thank them for t
 -	Style has become one of the primary ways in which people express their personality and in which they distinguish themselves from those around them. We are passionate about helping them grow. 
  
 
-## Team Members and Responsibilities:  
 
-Software Developer\ Software Architect: Ali Ibrahim
--	Responsible for technical architecture
--	Responsible for full stack development
--	Responsible for penetration testing 
-
-Project Manager\ Software Developer: Rania Ibrahim
--	Responsible for setup and maintenance of server environment. 
--	Responsible for penetration testing 
--	Responsible for full stack development
-
-Security Analyst\ Software Developer: Nathaniel Carter
--	Responsible for analyzing and implementing security measures
--	Responsible for monitoring network for security issues
--	Responsible for penetration testing
 ## Used Technologies:  
 - We will use SQL for our database. 
 - As well as C#, Angular, HTML, CSS, and Typescript for our front and backend development. 
