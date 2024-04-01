@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace HBHB.Models
+﻿namespace HBHB.Models
 {
     public class OrderCreate
     {
@@ -17,7 +12,7 @@ namespace HBHB.Models
         public string Budget { get; set; }
         public string Topic { get; set; }
         public string Questions { get; set; }
-        public string EventType { get; set; }   
+        public string EventType { get; set; }
     }
 
     public class OrderGet

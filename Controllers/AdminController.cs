@@ -1,19 +1,11 @@
 ﻿using HBHB.Models;
 using HBPOS.Data;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 namespace HBHB.Controllers
 {
     [ApiController]
@@ -164,6 +156,6 @@ namespace HBHB.Controllers
             }
             return ordersList;
         }
-        
+
     }
 }

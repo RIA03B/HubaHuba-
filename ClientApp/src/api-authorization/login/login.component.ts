@@ -40,6 +40,9 @@ export class LoginComponent implements OnInit {
       case LoginActions.Register:
         this.redirectToRegister();
         break;
+      case LoginActions.CareerRegisterModel:
+        this.redirectToCareerRegisterModel();
+        break;
       default:
         throw new Error(`Invalid action '${action}'`);
     }
@@ -85,6 +88,11 @@ export class LoginComponent implements OnInit {
   private redirectToRegister(): any {
     this.redirectToApiAuthorizationPath(
       `${ApplicationPaths.IdentityRegisterPath}?returnUrl=${encodeURI('/' + ApplicationPaths.Login)}`);
+  }
+
+  private redirectToCareerRegisterModel(): any {
+    this.redirectToApiAuthorizationPath(
+      `${ApplicationPaths.IdentityCareerRegisterModelPath}?returnUrl=${encodeURI('/' + ApplicationPaths.Login)}`);
   }
 
   private redirectToProfile(): void {

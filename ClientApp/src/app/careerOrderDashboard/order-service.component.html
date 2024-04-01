@@ -1,0 +1,11 @@
+<div class="orders-container">
+  <h1 class="orders-heading">Orders Dashboard</h1>
+  <div *ngFor="let order of orders" class="order-details">
+    <p>Order ID: {{ order.OrderID }}</p>
+    <p>Order Type: {{ order.OrderType }}</p>
+    <div class="order-actions">
+      <button (click)="takeOrder(order)">Take Order</button>
+      <button (click)="showOrderDetails(order)">Show Details</button>
+    </div>
+  </div>
+</div>

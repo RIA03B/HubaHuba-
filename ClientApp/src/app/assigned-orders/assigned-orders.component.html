@@ -1,0 +1,11 @@
+<!-- HTML template for displaying assigned orders -->
+<div>
+  <h2>Assigned Orders</h2>
+  <!-- Display assigned orders here -->
+  <ul>
+    <li *ngFor="let order of assignedOrders">
+      Order ID: {{ order.orderId }}, Assigned To: {{ order.userId }}
+    </li>
+  </ul>
+</div>
+

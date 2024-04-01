@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <div class="career-dashboard">
+    <h1>Welcome to Your Career Dashboard</h1>
+
+    <!-- Registration Form -->
+    <div>
+      <h2>Create a New Account</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <!-- Form fields for registration -->
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" formControlName="email" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>User Name:</label>
+          <input formControlName="userName" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" formControlName="password" class="form-control" />
+          <div *ngIf="registrationForm.get('password').invalid && (registrationForm.get('password').dirty || registrationForm.get('password').touched)" class="text-danger">
+            <div *ngIf="registrationForm.get('password').errors.required">Password is required.</div>
+            <div *ngIf="registrationForm.get('password').errors.minlength">Password must be at least 6 characters long.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" formControlName="confirmPassword" class="form-control" />
+          <div *ngIf="registrationForm.get('confirmPassword').invalid && (registrationForm.get('confirmPassword').dirty || registrationForm.get('confirmPassword').touched)" class="text-danger">
+            <div *ngIf="registrationForm.get('confirmPassword').errors.required">Confirm Password is required.</div>
+            <div *ngIf="registrationForm.get('confirmPassword').errors.passwordMismatch">Passwords do not match.</div>
+          </div>
+        </div>
+
+        <!-- Additional fields for career registration -->
+        <div class="form-group">
+          <label>Affiliated with Fashion Brands or Companies:</label>
+          <input formControlName="affiliation" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Experience as a Fashion Designer:</label>
+          <textarea formControlName="experience" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Specialization in Fashion Design:</label>
+          <input formControlName="designSpecialization" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Portfolio or Website:</label>
+          <input formControlName="portfolio" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Fashion Events or Shows Participation:</label>
+          <input formControlName="fashionEvents" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Design Inspirations:</label>
+          <input formControlName="designInspirations" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Special Requirements or Accommodations:</label>
+          <input formControlName="specialRequirements" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>How did you hear about this opportunity?</label>
+          <input formControlName="heardAbout" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Design Aesthetic or Style:</label>
+          <input formControlName="designAesthetic" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Target Audience or Customer Base:</label>
+          <input formControlName="targetAudience" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Materials or Techniques Frequently Used:</label>
+          <input formControlName="designTechniques" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Awards or Recognition:</label>
+          <input formControlName="awardsRecognition" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Challenges or Obstacles Anticipated:</label>
+          <input formControlName="challengesObstacles" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Inspiration and Motivation:</label>
+          <input formControlName="inspirationMotivation" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Goals or Milestones:</label>
+          <input formControlName="goalsMilestones" class="form-control" />
+        </div>
+
+        <!-- Add more fields here -->
+
+        <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Register</button>
+      </form>
+    </div>
+
+    <!-- Display user data or any relevant information -->
+    <div *ngIf="userData">
+      <h2>User Information</h2>
+
+</body>
+</html>

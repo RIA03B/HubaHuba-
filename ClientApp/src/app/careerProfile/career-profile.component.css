@@ -1,0 +1,53 @@
+.profile-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profile-section {
+  margin-bottom: 20px;
+}
+
+  .profile-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .profile-section div {
+    margin-bottom: 10px;
+  }
+
+  .profile-section strong {
+    font-weight: bold;
+  }
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  height: auto;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+.text-danger {
+  color: red;
+}

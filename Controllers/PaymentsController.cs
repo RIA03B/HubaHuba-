@@ -1,5 +1,4 @@
-﻿using HBHB.Data;
-using HBHB.Models;
+﻿using HBHB.Models;
 using HBPOS.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,6 @@ using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Threading.Tasks;
 
 namespace HBHB.Controllers
 {
@@ -52,7 +50,8 @@ namespace HBHB.Controllers
                     {
                         payment.PaymentType = false;
                     }
-                    else {
+                    else
+                    {
                         payment.PaymentType = false;
                     }
                     payments.Add(payment);
@@ -92,7 +91,7 @@ namespace HBHB.Controllers
 
         [HttpPost]
         [Route("api/updatePaymentMethod/{paymentID}")]
-        public List<Response> updatePaymentMethod([FromBody] PaymentMethod paymentMethod , string paymentID)
+        public List<Response> updatePaymentMethod([FromBody] PaymentMethod paymentMethod, string paymentID)
         {
             db dbObj = new db();
             string con2 = dbObj.getConString();

@@ -1,0 +1,119 @@
+﻿@page
+@model CareerRegisterModel
+@{
+    ViewData["Title"] = "Career Registration";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.UserName"></label>
+                <input asp-for="Input.UserName" class="form-control" />
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Affiliation">Are you affiliated with any fashion brands or companies? If so, please provide details.</label>
+                <input asp-for="Input.Affiliation" class="form-control" />
+                <span asp-validation-for="Input.Affiliation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Experience">Can you provide a brief overview of your experience as a fashion designer?</label>
+                <textarea asp-for="Input.Experience" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Input.Experience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DesignSpecialization">What type of fashion design do you specialize in?</label>
+                <input asp-for="Input.DesignSpecialization" class="form-control" />
+                <span asp-validation-for="Input.DesignSpecialization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Portfolio">Do you have a portfolio or website showcasing your work? If yes, please provide the link or details.</label>
+                <input asp-for="Input.Portfolio" class="form-control" />
+                <span asp-validation-for="Input.Portfolio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.FashionEvents">Have you participated in any fashion events or shows before? If so, which ones?</label>
+                <input asp-for="Input.FashionEvents" class="form-control" />
+                <span asp-validation-for="Input.FashionEvents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DesignInspirations">Are there any specific themes or inspirations that influence your designs?</label>
+                <input asp-for="Input.DesignInspirations" class="form-control" />
+                <span asp-validation-for="Input.DesignInspirations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.SpecialRequirements">Do you have any special requirements or accommodations needed for participation?</label>
+                <input asp-for="Input.SpecialRequirements" class="form-control" />
+                <span asp-validation-for="Input.SpecialRequirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.HeardAbout">How did you hear about this registration opportunity?</label>
+                <input asp-for="Input.HeardAbout" class="form-control" />
+                <span asp-validation-for="Input.HeardAbout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DesignAesthetic">What is your design aesthetic or style?</label>
+                <input asp-for="Input.DesignAesthetic" class="form-control" />
+                <span asp-validation-for="Input.DesignAesthetic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.TargetAudience">Can you describe your target audience or customer base?</label>
+                <input asp-for="Input.TargetAudience" class="form-control" />
+                <span asp-validation-for="Input.TargetAudience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DesignTechniques">Are there any specific materials or techniques you frequently use in your designs?</label>
+                <input asp-for="Input.DesignTechniques" class="form-control" />
+                <span asp-validation-for="Input.DesignTechniques" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.AwardsRecognition">Have you won any awards or received recognition for your work as a fashion designer? What do you hope to gain from participating in this event/program?</label>
+                <input asp-for="Input.AwardsRecognition" class="form-control" />
+                <span asp-validation-for="Input.AwardsRecognition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ChallengesObstacles">Are there any challenges or obstacles you anticipate facing as a fashion designer?</label>
+                <input asp-for="Input.ChallengesObstacles" class="form-control" />
+                <span asp-validation-for="Input.ChallengesObstacles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.InspirationMotivation">How do you stay inspired and motivated in your creative process?</label>
+                <input asp-for="Input.InspirationMotivation" class="form-control" />
+                <span asp-validation-for="Input.InspirationMotivation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.GoalsMilestones">Do you have any specific goals or milestones you're working towards in your career as a fashion designer?</label>
+                <input asp-for="Input.GoalsMilestones" class="form-control" />
+                <span asp-validation-for="Input.GoalsMilestones" class="text-danger"></span>
+            </div>
+            <!-- Add more fields as needed -->
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

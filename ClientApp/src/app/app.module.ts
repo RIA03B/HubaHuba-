@@ -43,6 +43,7 @@ import { WardrobeComponent } from './wardrobe/wardrobe.component';
 import { GarmentsComponent } from './garments/garments.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
+import { CareerProfileComponent } from './careerProfile/career-profile.component'; 
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -53,7 +54,8 @@ const routes: Routes = [
   { path: 'garments', component: GarmentsComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'orders', component: OrdersComponent },
-  {path: '**', component: NotFoundComponent}
+  { path: 'career-profile', component: CareerProfileComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -96,6 +98,7 @@ const routes: Routes = [
     HomeComponent,
     AccessDeniedComponent,
     NotFoundComponent,
+    CareerProfileComponent, 
     AdviseComponent,
     EventsComponent,
     WardrobeComponent,

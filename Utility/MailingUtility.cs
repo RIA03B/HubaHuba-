@@ -1,17 +1,14 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Threading.Tasks;
 
 namespace HBHB.Utility
 {
     public class MailingUtility
     {
 
-        public static void SendEmail(string Message) {
+        public static void SendEmail(string Message)
+        {
 
             var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
             var config = builder.Build();

@@ -1,0 +1,34 @@
+/* Apply basic styling to the Orders Dashboard container */
+.orders-container {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding around the content */
+}
+
+/* Style the order details */
+.order-details {
+  margin-bottom: 20px; /* Add some spacing between each order */
+  border: 1px solid #ccc; /* Add a border around each order */
+  padding: 10px; /* Add some padding inside the order */
+}
+
+/* Style the buttons */
+.order-actions button {
+  margin-right: 10px; /* Add some spacing between buttons */
+  padding: 5px 10px; /* Add padding to buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #007bff; /* Set background color */
+  color: #fff; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Add border radius */
+}
+
+  .order-actions button:hover {
+    background-color: #0056b3; /* Darken background color on hover */
+  }
+
+/* Optional: Style the heading */
+.orders-heading {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px; /* Add some spacing below the heading */
+}

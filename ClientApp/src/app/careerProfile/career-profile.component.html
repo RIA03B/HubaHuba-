@@ -1,0 +1,69 @@
+<h1>Career Profile</h1>
+
+<div class="profile-container">
+  <div class="profile-section">
+    <h2>Personal Information</h2>
+    <div>
+      <strong>User Name:</strong> <input type="text" [(ngModel)]="careerProfile.UserName" class="form-control" />
+    </div>
+    <div>
+      <strong>Email:</strong> <input type="email" [(ngModel)]="careerProfile.Email" class="form-control" />
+    </div>
+    <!-- Add more personal information fields as needed -->
+  </div>
+
+  <div class="profile-section">
+    <h2>Career Details</h2>
+    <div>
+      <strong>Affiliation:</strong> <input type="text" [(ngModel)]="careerProfile.Affiliation" class="form-control" />
+    </div>
+    <div>
+      <strong>Experience:</strong> <textarea [(ngModel)]="careerProfile.Experience" class="form-control" rows="4"></textarea>
+    </div>
+    <div>
+      <strong>Design Specialization:</strong> <input type="text" [(ngModel)]="careerProfile.DesignSpecialization" class="form-control" />
+    </div>
+    <div>
+      <strong>Portfolio:</strong> <input type="text" [(ngModel)]="careerProfile.Portfolio" class="form-control" />
+    </div>
+    <div>
+      <strong>Fashion Events:</strong> <input type="text" [(ngModel)]="careerProfile.FashionEvents" class="form-control" />
+    </div>
+    <div>
+      <strong>Design Inspirations:</strong> <input type="text" [(ngModel)]="careerProfile.DesignInspirations" class="form-control" />
+    </div>
+    <div>
+      <strong>Special Requirements:</strong> <input type="text" [(ngModel)]="careerProfile.SpecialRequirements" class="form-control" />
+    </div>
+    <div>
+      <strong>Heard About:</strong> <input type="text" [(ngModel)]="careerProfile.HeardAbout" class="form-control" />
+    </div>
+    <div>
+      <strong>Design Aesthetic:</strong> <input type="text" [(ngModel)]="careerProfile.DesignAesthetic" class="form-control" />
+    </div>
+    <div>
+      <strong>Target Audience:</strong> <input type="text" [(ngModel)]="careerProfile.TargetAudience" class="form-control" />
+    </div>
+    <div>
+      <strong>Design Techniques:</strong> <input type="text" [(ngModel)]="careerProfile.DesignTechniques" class="form-control" />
+    </div>
+    <div>
+      <strong>Awards Recognition:</strong> <input type="text" [(ngModel)]="careerProfile.AwardsRecognition" class="form-control" />
+    </div>
+    <div>
+      <strong>Challenges Obstacles:</strong> <input type="text" [(ngModel)]="careerProfile.ChallengesObstacles" class="form-control" />
+    </div>
+    <div>
+      <strong>Inspiration Motivation:</strong> <input type="text" [(ngModel)]="careerProfile.InspirationMotivation" class="form-control" />
+    </div>
+    <div>
+      <strong>Goals Milestones:</strong> <input type="text" [(ngModel)]="careerProfile.GoalsMilestones" class="form-control" />
+    </div>
+    <!-- Add more career details fields as needed -->
+  </div>
+
+  <!-- Add more sections for portfolio, events, inspirations, etc. -->
+
+  <button type="button" class="btn btn-primary" (click)="saveCareerProfile()">Save</button>
+  <button type="button" class="btn btn-primary" (click)="viewOrders()">View Orders</button>
+</div>
